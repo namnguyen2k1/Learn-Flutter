@@ -1,6 +1,6 @@
 # Flutter Command-line
 
-- Read: [Flutter_Command_Line_Tools](https://docs.flutter.dev/reference/flutter-cli)
+- Xem thêm: [Flutter_Command_Line_Tools](https://docs.flutter.dev/reference/flutter-cli)
 
 ### 1. Kiểm tra tương thích sdk, thiết bị, ide
 
@@ -178,7 +178,7 @@ flutter config --enable-web
 flutter config  --clear-features
 ```
 
-### 6. Định dạng flutter
+### 6. Định dạng Flutter
 
 - Định dạng tất cả các file trong dự án
 
