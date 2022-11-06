@@ -1,9 +1,8 @@
-## Kho Lưu Trữ Những Thứ Về Flutter Mà Tôi Biết
+## Flutter những điều học và làm
 
-- Bạn nên tìm đọc và lần lược làm theo các file sau:
+- Repo này cập nhập những gì tôi học được trong quá trình thực hiện các dự án flutter
+- Các kiến nghị, giải pháp được đưa ra nhằm giúp người đọc có thể bắt đầu với flutter một cách nhanh chóng hơn. Mà phần lớn trong đó dựa trên các kiến thức tôi học được khi chuyển từ lập trình web sang lập trình mobile
 
-  - `flutter_setup_environment.md`: Hướng dẫn cách cấu hình, cài đặc để code Flutter.
-  - `fluter_tip_for_coding.md`: Để xem các mẹo và hướng xử lý lỗi căn bản khi code.
+### Tài liệu
 
-- Thư mục `Flutter Images`: Chức các hình ảnh tóm tắt kiến thức trong quá trình tìm hiểu Flutter.
-- Thư mục `Icons`: Chứa tên gọi của các icon được Flutter cung cấp.
+- CT484 Phát triển ứng dụng di động: Ts. Bùi Võ Quốc Bảo
