@@ -1,54 +1,6 @@
-## Tự động paste Json sang Model và ngược lại
-
-- Thư viện sử dụng:
-
-```bash
-flutter pub add --dev json_annotation
-```
-
-```bash
-flutter pub add --dev json_serializable
-```
-
-```bash
-flutter pub add --dev build_runner
-```
-
-- Sử dụng tại file \*.model.dart:
-
-```dart
-import 'package:json_annotation/json_annotation.dart';
-part 'course.model.g.dart'; // nơi code của hàm `_$CourseFromJson` được generage được render.
-
-@JsonSerializable()
-class Course {
-  int id;
-  @JsonKey(name: 'user_id') // Kiểu data response trả về
-  int userId;
-  @JsonKey(name: 'file_url')
-  String fileUrl;
-
-  Course({
-    required this.id,
-    required this.userId,
-    required this.fileUrl
-  });
-
-// Đổi tên tương ứng với model: `_$CourseFromJson`
-  factory Course.fromJson(Map<String, dynamic> json) => _$CourseFromJson(json);
-  Map<String, dynamic> toJson() => _$CourseToJson(this);
-}
-```
-
-- Gender Code: Chạy lại dòng này mỗi khi thay đổi code
-
-```bash
-flutter pub run build_runner watch
-```
-
 ## Paste Json to Model online
 
-- Convert here: [Json to Dart]('https://jsontodart.com/')
+- Convert here: [Json to Dart](https://jsontodart.com/)
 - Điểm cộng:
   - Thường thì khi xây dựng frontend đã có backend: nên chỉ cần lấy mẫu json chung nhất (getById,..) để copy
   - Đặc tên model và chọn convert
@@ -59,34 +11,40 @@ flutter pub run build_runner watch
 ## Template Model
 
 - `Rule`:
-  - Gía trị mặc định: String => 'default', int => 0, [link, null] => 'null'
+
+  - Gía trị mặc định: Một số trường có thể không tồn tại hoặc null, cần gắn giá trị mặc định cho nó
+
+    - link: 'empty',
+    - `updatedAt`, `deletedAt`: 'null',
+
   - Tên thuộc tính: createdAt
-  - Tên trường json: created_at
+  - Tên trường json: createdAt (Không nên dùng kiểu snake case như created_at)
   - Các hàm cơ bản: `fromJson()` , `toJson()`
 
 ```dart
 
-class ___Model {
-  int id;
+class ModelName {
+  final int id;
   // add more property
-  String createdAt;
-  String updatedAt;
-  String deletedAt;
+  final String createdAt;
+  final String updatedAt;
+  final String deletedAt;
 
-  ___Model({
+  ModelName({
     required this.id,
+    required this.text,
     required this.createdAt,
     required this.updatedAt,
     required this.deletedAt,
   });
 
-  factory ___Model.fromJson(Map<String, dynamic> json) {
-    return ___Model(
-      id: json['id'] ?? 0,
+  factory ModelName.fromJson(Map<String, dynamic> json) {
+    return ModelName(
+      id: json['id'] as int,
       // add more property
-      createdAt: json['created_at'] ?? 'default',
-      updatedAt: json['updated_at'] ?? 'null',
-      deletedAt: json['deleted_at'] ?? 'null',
+      createdAt: json['createdAt'] as String,
+      updatedAt: json['updatedAt'] as String ?? 'null',
+      deletedAt: json['deletedAt'] as String ?? 'null',
     );
   }
 
@@ -94,9 +52,9 @@ class ___Model {
     final json = <String, dynamic>{
       'id': id,
       // add more property
-      'created_at': createdAt,
-      'updated_at': updatedAt,
-      'deleted_at': deletedAt,
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
+      'deletedAt': deletedAt,
     };
     return json;
   }

@@ -2,7 +2,7 @@
 
 ### Một file sql có thể khai báo nhiều table
 
-- Nên khai báo tối đa 10 table để đảm bảo hiệu suất đọc ghi csdl
+- Chỉ nên khai báo tối đa 10 table để đảm bảo hiệu suất đọc ghi csdl
 
 ```dart
 Future<void> _createDefaultTables(Database db, int version) async {

@@ -1,3 +1,5 @@
+## Một số cách để chèn khoảng cách giữa các phần tử
+
 - Chèn khoảng cách giữa các phần tử:
 
   - `Divider()`: Dùng để vạch 1 đường kẻ ngăn cách các phần tử
@@ -26,7 +28,7 @@
   )
   ```
 
-  - `Spacer()`: Thường được dùng trong widget Colum`n` và `Row`, đặc thuộc tính flex để có thể điều chỉnh khoảng cách giữa các phần tử
+  - `Spacer()`: Được dùng trong widget `Colum` và `Row`, đặc thuộc tính flex sẽ chia khoảng cách giữa các phần tử dựa trên tỉ lệ hiện có giữa các Spacer()
   - [Spacer_Youtube]('https://youtu.be/7FJgd7QN1zI')
 
   ```dart
