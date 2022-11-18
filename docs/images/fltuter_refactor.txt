@@ -1,0 +1,21 @@
+- ctrl + click vào biến có thể truyền nó vào trong contructor
+- model class: chuột phải chọn tạo constructor
+
+## Quản lý kiểm tra validator
+- tạo lớp StringUtil: static bool isValidEmail, isValidDescription (check regex with .hasMatch(this))
+
+## extenstions
+- được dùng để mở rộng tiện ích của các kiểu dữ liệu khác (num, int, String,..): giá trị được truy xuất qua từ khoá this: 
+- là một class nên có thể tạo get, methods
+
+## with (tương tự như interface trong các ngôn ngữ khác)
+- từ khoá with dùng cho các class được định nghĩa là "mixin"
+- một class có thể kết hợp nhiều mixin class
+
+## extends
+- kế thừa 1 class
+- class: class hoặc là abstract class
+
+
+
+
